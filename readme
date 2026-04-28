@@ -1,0 +1,93 @@
+📌 Overview
+OptiSmart is a deep learning–based computer vision project designed to detect and classify eye diseases from retinal images. The system uses a Convolutional Neural Network (CNN) trained on a labeled dataset of eye images to automatically identify conditions such as cataract, glaucoma, diabetic retinopathy, and normal eyes.
+This project focuses on model development, training, and evaluation, and is executed entirely within a development environment (VS Code), without any web or mobile interface.
+🎯 Objectives
+Build a robust CNN model for medical image classification
+Detect multiple eye diseases from retinal images
+Ensure reliable evaluation using Stratified K-Fold Cross-Validation
+Reduce dependency on manual diagnosis methods
+🧠 Key Features
+Multi-class image classification (4 categories)
+Custom CNN architecture
+Stratified K-Fold validation for balanced evaluation
+Data augmentation for improved generalization
+Offline inference via IDE (no deployment layer)
+📂 Dataset
+Source: Kaggle Eye Disease Dataset
+Total Images: ~4217
+Classes:
+Cataract
+Glaucoma
+Diabetic Retinopathy
+Normal
+The dataset is relatively balanced across all categories, making it suitable for classification tasks.
+⚙️ Tech Stack
+🧠 Machine Learning
+Python
+TensorFlow / Keras
+NumPy
+Scikit-learn
+🧪 Development Environment
+VS Code
+Jupyter Notebook (optional for experimentation)
+🔁 Project Pipeline
+Plain text
+1. Dataset Loading
+2. Data Preprocessing (resize, normalization)
+3. Data Augmentation (rotation, zoom, flip)
+4. Stratified K-Fold Split (k=5)
+5. CNN Model Training
+6. Model Evaluation (accuracy, precision, recall, F1-score)
+7. Model Saving
+8. Manual Image Input → Prediction in VS Code
+🧠 Model Architecture
+Convolutional Layers (feature extraction)
+ReLU Activation (non-linearity)
+MaxPooling Layers (dimensionality reduction)
+Dense Layers (classification)
+Dropout (overfitting prevention)
+Softmax Output (multi-class probability)
+📊 Evaluation Metrics
+Accuracy
+Precision
+Recall
+F1-Score
+These metrics are computed during training and validation across all folds.
+🔍 Validation Strategy
+Stratified K-Fold Cross-Validation (k=5) was used to:
+Maintain class balance in each fold
+Reduce bias from random splitting
+Provide reliable performance estimation
+🖥️ How It Works
+The model is trained on preprocessed eye images
+After training, the model is saved
+A new image is manually provided in the code
+The model predicts the disease class
+Output is displayed in the terminal/IDE
+🚀 How to Run
+1. Install dependencies
+Bash
+pip install tensorflow keras numpy scikit-learn opencv-python matplotlib
+2. Run training script
+Bash
+python train.py
+3. Run prediction
+Bash
+python predict.py
+💻 System Requirements
+RAM: 8 GB minimum
+GPU (optional but recommended): 4GB+ VRAM
+CPU-only execution is possible but slower
+⚠️ Limitations
+Model trained on a relatively small dataset
+No real-world noisy data handling
+No deployment (web/app interface)
+No explainability (e.g., Grad-CAM)
+🔮 Future Improvements
+Use Transfer Learning (ResNet, EfficientNet)
+Add confidence score in predictions
+Integrate Grad-CAM for visualization
+Deploy using Flask / FastAPI
+Train on larger clinical datasets
+🧾 Conclusion
+OptiSmart demonstrates how deep learning can be applied to medical imaging for early-stage disease detection. By combining CNNs with stratified validation, the project ensures both performance and reliability, making it a strong foundation for future healthcare AI systems.
